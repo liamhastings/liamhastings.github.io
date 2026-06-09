@@ -3,6 +3,42 @@ import './Posts.css';
 
 const posts = [
     {
+        id: 11,
+        date: 'April 12, 2025',
+        title: 'Exam Season',
+        description: "Finally exam season, almost finished third year!! Finished COMP3000 on the 11th and I got COMP3804, COMP3007, and MATH2107 left. Can't wait to finish this semester!"
+    },
+    {
+        id: 10,
+        date: 'February 18, 2025',
+        title: 'Reading week!',
+        description: "After a COMP3000 midterm, a MATH2007 test, and a COMP3804 assignment, it is finally reading week! I'm excited to see some friends and just relax for a bit :). Also have to study for the COMP3007 and COMP3804 midterms..."
+    },
+    {
+        id: 9,
+        date: 'February 6, 2025',
+        title: 'learning R',
+        description: 'Got around to learning R a bit ago. I played around with functions using the mtcars dataset that is in the langauge!'
+    },
+    {
+        id: 8,
+        date: 'January 30, 2025',
+        title: 'calc 2 test',
+        description: 'just finished a calc 2 test and wow! this is not the same as calc 1 haha. so far staying on top of everything but I am most excited for weekend!'
+    },
+    {
+        id: 7,
+        date: 'January 25, 2025',
+        title: 'Portfolio update!',
+        description: 'I was able to upload my database demo video. Still need to get around to recording my CNN running on google colab (for T4 GPU).'
+    },
+    {
+        id: 6,
+        date: 'January 21, 2025',
+        title: 'back to school',
+        description: 'finally back in the rythm of school! this semester I have COMP3804, MATH2007, COMP3007, COMP3000, and ERTH2012'
+    },
+    {
         id: 5,
         date: 'December 22, 2024',
         title: 'up and running!',
