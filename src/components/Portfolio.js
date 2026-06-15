@@ -10,7 +10,7 @@ const projects = [
             <>
                 Full-stack mobile app that turns parking enforcement into a
                 crowdsourced early-warning system. When a bylaw officer chalks tires
-                on a street, any user can report it in two taps — and everyone
+                on a street, any user can report it in two taps, and everyone
                 parked nearby gets an instant alert, tiered by urgency (your street
                 vs. just the area). Originally a native iOS app, rebuilt from the
                 ground up as a cross-platform React Native + Expo client backed by a
@@ -44,15 +44,19 @@ const projects = [
     {
         id: 'watchlist-db',
         title: 'Watchlist Database',
-        tagline: 'Relational database for tracking movies, books, and reading/watching lists.',
+        tagline: 'Full-stack web app for tracking movies, books, and your reading/watching lists.',
         description: (
             <>
-                Final project for COMP3005. Schema designed to store movies, books,
-                user lists, and accounts — currently seeded with a handful of test
-                users plus 15 books and 15 movies, but built to scale to thousands.
+                Started as a COMP3005 relational-database project and grew into a full
+                Flask web app with a clean custom interface. Users create accounts
+                (passwords hashed), then search real titles from the Open Library and
+                TMDB APIs and add them — with cover art, posters, authors, and
+                directors — to personal book and video lists. The catalog isn't
+                hardcoded: it grows from whatever users discover, all backed by a
+                normalized SQLite schema with users, lists, and many-to-many links.
             </>
         ),
-        tech: ['PostgreSQL', 'SQL', 'Python'],
+        tech: ['Python', 'Flask', 'SQLite', 'SQL', 'HTML/CSS', 'REST APIs'],
     },
 ];
 
