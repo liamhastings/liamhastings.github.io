@@ -65,7 +65,7 @@ const Portfolio = () => {
         <div className="portfolio section" id="portfolio">
             <h2>Portfolio</h2>
             <p className="portfolio-intro">
-                A few things I've built — from coursework to side projects I keep
+                A few things I've built, from coursework to side projects I keep
                 coming back to.
             </p>
 
