@@ -19,7 +19,7 @@ const projects = [
         ),
         highlights: [
             'Designed a geospatial notification engine using PostGIS ST_DWithin queries that matches new chalk reports against every active parking session and tiers alerts by proximity to the user\'s exact street.',
-            'Built intersection-based location selection on top of the OpenStreetMap Overpass API, resolving a street + cross-street pair to precise coordinates — fixing a GPS-drift bug in the original design.',
+            'Built intersection-based location selection on top of the OpenStreetMap Overpass API, resolving a street + cross-street pair to precise coordinates, fixing a GPS-drift bug in the original design.',
             'Migrated the original native iOS app to a cross-platform Expo codebase, with JWT auth, persisted sessions, and a notification pipeline that never blocks the primary write path on failure.',
         ],
         tech: [
@@ -50,8 +50,8 @@ const projects = [
                 Started as a COMP3005 relational-database project and grew into a full
                 Flask web app with a clean custom interface. Users create accounts
                 (passwords hashed), then search real titles from the Open Library and
-                TMDB APIs and add them — with cover art, posters, authors, and
-                directors — to personal book and video lists. The catalog isn't
+                TMDB APIs and add them with cover art, posters, authors, and
+                directors to personal book and video lists. The catalog isn't
                 hardcoded: it grows from whatever users discover, all backed by a
                 normalized SQLite schema with users, lists, and many-to-many links.
             </>
