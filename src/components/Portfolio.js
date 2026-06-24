@@ -58,6 +58,30 @@ const projects = [
         ),
         tech: ['Python', 'Flask', 'SQLite', 'SQL', 'HTML/CSS', 'REST APIs'],
     },
+        {
+        id: 'weather-app',
+        title: 'Weather App',
+        tagline: 'A full-stack weather lookup app with user accounts and admin controls.',
+        description: (
+            <>
+                A server-rendered weather app: users sign up, log in, and search any
+                city to get live conditions, temperature, "feels like", humidity, and
+                wind, pulled from the OpenWeatherMap API. Admins get a separate,
+                role-gated dashboard to view and manage registered users. Built on
+                Node/Express with Handlebars templating and a SQLite database, then
+                redesigned with a modern glassmorphic UI.
+            </>
+        ),
+        highlights: [
+            'Built HTTP Basic Auth middleware with role-based access control, gating the admin user-management dashboard behind an "admin" role.',
+            'Integrated the OpenWeatherMap API with a resilient request pipeline, URL-encoded queries plus network- and parse-error handling so a failed lookup degrades gracefully instead of crashing the server.',
+            'Hardened the data layer by migrating to better-sqlite3 with parameterized queries, and gave the whole app a responsive glassmorphic redesign.',
+        ],
+        tech: [
+            'Node.js', 'Express', 'Handlebars', 'SQLite', 'better-sqlite3',
+            'REST APIs', 'HTML/CSS',
+        ],
+    },
 ];
 
 const Portfolio = () => {
