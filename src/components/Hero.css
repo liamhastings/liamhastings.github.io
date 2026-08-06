@@ -1,0 +1,110 @@
+.hero {
+    padding: 88px 0 8px;
+}
+
+.hero-eyebrow {
+    margin: 0 0 10px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent-text);
+}
+
+.hero-name {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+}
+
+.hero-headline {
+    max-width: 30ch;
+    margin: 10px 0 0;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text);
+}
+
+.hero-summary {
+    max-width: 60ch;
+    margin: 18px 0 0;
+    color: var(--muted);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.button {
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface);
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.button:hover {
+    border-color: var(--accent);
+    background-color: var(--surface-hover);
+    transform: translateY(-1px);
+}
+
+.button-primary {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.button-primary:hover {
+    background-color: var(--accent);
+    filter: brightness(1.08);
+}
+
+.hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin: 36px 0 0;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--border);
+}
+
+.hero-facts dt {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+}
+
+.hero-facts dd {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-strong);
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding-top: 48px;
+    }
+
+    .hero-name {
+        font-size: 2.25rem;
+    }
+
+    .hero-headline {
+        font-size: 1.15rem;
+    }
+
+    .hero-facts {
+        gap: 20px;
+    }
+}

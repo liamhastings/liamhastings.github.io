@@ -58,7 +58,7 @@ const projects = [
         ),
         tech: ['Python', 'Flask', 'SQLite', 'SQL', 'HTML/CSS', 'REST APIs'],
     },
-        {
+    {
         id: 'weather-app',
         title: 'Weather App',
         tagline: 'A full-stack weather lookup app with user accounts and admin controls.',
@@ -86,37 +86,39 @@ const projects = [
 
 const Portfolio = () => {
     return (
-        <div className="portfolio section" id="portfolio">
-            <h2>Portfolio</h2>
-            <p className="portfolio-intro">
+        <section className="section" id="projects">
+            <h2 className="section-title">
+                <span className="section-index">03.</span> Projects
+            </h2>
+            <p className="section-intro">
                 A few things I've built, from coursework to side projects I keep
                 coming back to.
             </p>
 
             <div className="project-list">
                 {projects.map(project => (
-                    <article key={project.id} className="project-card">
+                    <article key={project.id} className="project-card card">
                         <h3 className="project-title">{project.title}</h3>
                         <p className="project-tagline">{project.tagline}</p>
                         <p className="project-description">{project.description}</p>
 
                         {project.highlights && (
                             <ul className="project-highlights">
-                                {project.highlights.map((h, i) => (
-                                    <li key={i}>{h}</li>
+                                {project.highlights.map((highlight, i) => (
+                                    <li key={i}>{highlight}</li>
                                 ))}
                             </ul>
                         )}
 
-                        <div className="tech-tags">
+                        <ul className="tag-list">
                             {project.tech.map(t => (
-                                <span key={t} className="tech-tag">{t}</span>
+                                <li key={t} className="tag">{t}</li>
                             ))}
-                        </div>
+                        </ul>
                     </article>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

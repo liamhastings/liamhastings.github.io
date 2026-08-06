@@ -1,0 +1,14 @@
+.skill-groups {
+    display: grid;
+    gap: 20px;
+}
+
+.skill-group-name {
+    margin: 0 0 10px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}

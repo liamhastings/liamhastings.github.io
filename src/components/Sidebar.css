@@ -1,50 +1,172 @@
 .sidebar {
-    width: 25%;
-    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    flex: 0 0 var(--sidebar-width);
+    width: var(--sidebar-width);
+    height: 100vh;
+    border-right: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+.sidebar-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    padding: 48px 24px 24px;
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
-    object-fit: cover; 
-    margin-bottom: 20px;
+    object-fit: cover;
+    border: 1px solid var(--border);
 }
 
-.name-placeholder {
-    font-size: 1.5rem;
-    font-weight: bold;
+.identity {
+    margin: 18px 0 28px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.sidebar nav a {
+.identity .name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    letter-spacing: -0.01em;
+}
+
+.identity .role {
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+}
+
+.sidebar-nav a {
+    padding: 9px 14px;
+    border-radius: 8px;
+    border-left: 2px solid transparent;
+    color: var(--muted);
+    font-size: 0.92rem;
     text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
-    margin: 5px 0;
-    display: block;
-    text-align: center;
-    background-color: #e4e4e4;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.15s ease, color 0.15s ease,
+        border-color 0.15s ease;
 }
 
-.sidebar nav a:hover {
-    background-color: #ddd;
+.sidebar-nav a:hover {
+    background-color: var(--surface-hover);
+    color: var(--text-strong);
 }
 
-.sidebar nav a.active {
-    background-color: #007bff;
-    color: #fff;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.sidebar-nav a.active {
+    border-left-color: var(--accent);
+    background-color: var(--accent-soft);
+    color: var(--accent-text);
+    font-weight: 600;
 }
 
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: auto;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--bg);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease,
+        border-color 0.15s ease;
+}
 
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--text-strong);
+}
 
+.theme-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        flex: none;
+        width: 100%;
+        height: auto;
+        z-index: 10;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        overflow-x: auto;
+    }
+
+    .profile-picture {
+        width: 40px;
+        height: 40px;
+    }
+
+    .identity {
+        margin: 0;
+        text-align: left;
+    }
+
+    .identity .name {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .identity .role {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        width: auto;
+        margin-left: auto;
+    }
+
+    .sidebar-nav a {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .sidebar-nav a.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--accent);
+    }
+
+    .theme-toggle {
+        width: auto;
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+
+    .theme-toggle span {
+        display: none;
+    }
+}

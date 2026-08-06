@@ -22,21 +22,22 @@ const GitHubIcon = () => (
 );
 
 const Contact = () => {
-    const email = 'liamhastings@cmail.carleton.ca';
+    const email = 'liamhastings04@gmail.com';
     const mailto = `mailto:${email}?subject=Hello%20from%20your%20site`;
 
     return (
-        <div className="contact section" id="contact">
-            <h2>Contact</h2>
-            <p className="contact-intro">
-                I just wrapped up my degree and I'm open to chatting about new grad
-                roles, ML/AI projects, or anything that sounds interesting. The
-                fastest way to reach me is email, but feel free to use whichever
-                works for you.
+        <section className="section" id="contact">
+            <h2 className="section-title">
+                <span className="section-index">06.</span> Contact
+            </h2>
+            <p className="section-intro">
+                I'm open to chatting about new grad roles, ML/AI work, or anything
+                that sounds interesting. Email is fastest, but use whichever works
+                for you.
             </p>
 
             <div className="contact-grid">
-                <a className="contact-card" href={mailto}>
+                <a className="contact-card card" href={mailto}>
                     <EmailIcon />
                     <div className="text">
                         <span className="label">Email</span>
@@ -44,7 +45,7 @@ const Contact = () => {
                     </div>
                 </a>
 
-                <a className="contact-card"
+                <a className="contact-card card"
                     href="https://www.linkedin.com/in/liam-hastings-30b389270/"
                     target="_blank" rel="noopener noreferrer">
                     <LinkedInIcon />
@@ -54,17 +55,17 @@ const Contact = () => {
                     </div>
                 </a>
 
-                <a className="contact-card"
-                    href="https://github.com/li66m"
+                <a className="contact-card card"
+                    href="https://github.com/liamhastings"
                     target="_blank" rel="noopener noreferrer">
                     <GitHubIcon />
                     <div className="text">
                         <span className="label">GitHub</span>
-                        <span className="handle">@li66m</span>
+                        <span className="handle">@liamhastings</span>
                     </div>
                 </a>
             </div>
-        </div>
+        </section>
     );
 };
 
