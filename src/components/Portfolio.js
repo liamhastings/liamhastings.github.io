@@ -3,31 +3,6 @@ import './Portfolio.css';
 
 const projects = [
     {
-        id: 'amichalked',
-        title: 'AmIChalked',
-        tagline: 'A community-powered parking app that warns drivers the moment their tires get chalked.',
-        description: (
-            <>
-                Full-stack mobile app that turns parking enforcement into a
-                crowdsourced early-warning system. When a bylaw officer chalks tires
-                on a street, any user can report it in two taps, and everyone
-                parked nearby gets an instant alert, tiered by urgency (your street
-                vs. just the area). Originally a native iOS app, rebuilt from the
-                ground up as a cross-platform React Native + Expo client backed by a
-                Node/Express API and a PostgreSQL + PostGIS database.
-            </>
-        ),
-        highlights: [
-            'Designed a geospatial notification engine using PostGIS ST_DWithin queries that matches new chalk reports against every active parking session and tiers alerts by proximity to the user\'s exact street.',
-            'Built intersection-based location selection on top of the OpenStreetMap Overpass API, resolving a street + cross-street pair to precise coordinates, fixing a GPS-drift bug in the original design.',
-            'Migrated the original native iOS app to a cross-platform Expo codebase, with JWT auth, persisted sessions, and a notification pipeline that never blocks the primary write path on failure.',
-        ],
-        tech: [
-            'React Native', 'Expo', 'TypeScript', 'Node.js', 'Express',
-            'PostgreSQL', 'PostGIS', 'JWT', 'OpenStreetMap',
-        ],
-    },
-    {
         id: 'restock',
         title: 'Restock',
         tagline: 'An offline iOS app whose kitchen inventory fills itself in while you decide what to cook.',
@@ -51,6 +26,31 @@ const projects = [
         tech: [
             'React Native', 'Expo', 'TypeScript', 'Zustand', 'SQLite',
             'WebView', 'Claude API',
+        ],
+    },
+    {
+        id: 'amichalked',
+        title: 'AmIChalked',
+        tagline: 'A community-powered parking app that warns drivers the moment their tires get chalked.',
+        description: (
+            <>
+                Full-stack mobile app that turns parking enforcement into a
+                crowdsourced early-warning system. When a bylaw officer chalks tires
+                on a street, any user can report it in two taps, and everyone
+                parked nearby gets an instant alert, tiered by urgency (your street
+                vs. just the area). Originally a native iOS app, rebuilt from the
+                ground up as a cross-platform React Native + Expo client backed by a
+                Node/Express API and a PostgreSQL + PostGIS database.
+            </>
+        ),
+        highlights: [
+            'Designed a geospatial notification engine using PostGIS ST_DWithin queries that matches new chalk reports against every active parking session and tiers alerts by proximity to the user\'s exact street.',
+            'Built intersection-based location selection on top of the OpenStreetMap Overpass API, resolving a street + cross-street pair to precise coordinates, fixing a GPS-drift bug in the original design.',
+            'Migrated the original native iOS app to a cross-platform Expo codebase, with JWT auth, persisted sessions, and a notification pipeline that never blocks the primary write path on failure.',
+        ],
+        tech: [
+            'React Native', 'Expo', 'TypeScript', 'Node.js', 'Express',
+            'PostgreSQL', 'PostGIS', 'JWT', 'OpenStreetMap',
         ],
     },
     {
