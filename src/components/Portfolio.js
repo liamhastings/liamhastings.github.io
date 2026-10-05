@@ -3,6 +3,32 @@ import './Portfolio.css';
 
 const projects = [
     {
+        id: 'restock',
+        title: 'Restock',
+        tagline: 'An offline iOS app whose kitchen inventory fills itself in while you decide what to cook.',
+        description: (
+            <>
+                Most kitchen-inventory apps fail because keeping the inventory current
+                is a chore nobody does. Restock never asks for that work directly:
+                when you open a recipe you're already deciding "do I have this?" for
+                each ingredient, so tapping "have it" or "need it" updates your
+                inventory and your aisle-grouped grocery list as a by-product. A
+                built-in browser imports recipes from any site. Everything runs
+                locally on SQLite, with no backend, no account, and no sync. A
+                personal project I use daily on my iPhone (not on the App Store).
+            </>
+        ),
+        highlights: [
+            'Kept all domain logic free of React and native imports, so the 106-assertion rules suite compiles with tsc and runs under plain Node, with no test framework and no mocks. Modules that need I/O take it as a parameter.',
+            'Built two-tier recipe import: injected JavaScript reads schema.org Recipe JSON-LD over the WebView bridge, falling back to the Claude API only when a page has none. Both tiers fail closed, so a bad page never half-saves a recipe.',
+            'Wrote an ingredient-line parser that turns "2 (14-ounce) cans diced tomatoes" into a canonical item plus a free-text quantity, handling fractions, ranges, size adjectives, and float noise so the catalog doesn\'t fill up with near-duplicates.',
+        ],
+        tech: [
+            'React Native', 'Expo', 'TypeScript', 'Zustand', 'SQLite',
+            'WebView', 'Claude API',
+        ],
+    },
+    {
         id: 'amichalked',
         title: 'AmIChalked',
         tagline: 'A community-powered parking app that warns drivers the moment their tires get chalked.',
