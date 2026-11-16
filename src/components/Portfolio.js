@@ -34,8 +34,7 @@ const projects = [
         tagline: 'A parody swipe-to-match web app for finding hackathon teammates, built by a team of three in one day.',
         description: (
             <>
-                Built for the Stupideas hackathon: a tongue-in-cheek take on dating
-                apps where you swipe through potential hackathon teammates instead.
+                Built for the Stupideas hackathon: a parody of dating apps where you swipe through potential hackathon teammates instead.
                 I owned the Next.js scaffold, the shared type contract, the profile
                 API routes, and a seven-step onboarding wizard.
             </>
