@@ -29,6 +29,44 @@ const projects = [
         ],
     },
     {
+        id: 'stupideas',
+        title: 'Stupideas Hackathon Project',
+        tagline: 'A parody swipe-to-match web app for finding hackathon teammates, built by a team of three in one day.',
+        description: (
+            <>
+                Built for the Stupideas hackathon: a tongue-in-cheek take on dating
+                apps where you swipe through potential hackathon teammates instead.
+                I owned the Next.js scaffold, the shared type contract, the profile
+                API routes, and a seven-step onboarding wizard.
+            </>
+        ),
+        highlights: [
+            'Wrote the shared CLAUDE.md that coordinated three parallel Claude Code agents on separate branches, using per-person file ownership and a typed API contract so the agents never stepped on each other.',
+            'Shipped 15 pull requests across the team in a single day.',
+        ],
+        tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Claude Code'],
+    },
+    {
+        id: 'savely',
+        title: 'Savely',
+        tagline: 'A multi-user personal finance web app built on Plaid-linked bank accounts.',
+        description: (
+            <>
+                A React, Vite, and Tailwind front end on an Express/TypeScript API
+                and PostgreSQL, showing budgets, net worth, and transactions pulled
+                from bank accounts linked through Plaid.
+            </>
+        ),
+        highlights: [
+            'Secured the API with Supabase Auth JWTs verified against the project\'s JWKS, and scoped every query to the signed-in user.',
+            'Encrypted Plaid access tokens with AES-256-GCM inside a cursor-based transaction sync engine.',
+        ],
+        tech: [
+            'TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express',
+            'PostgreSQL', 'Supabase', 'Plaid API',
+        ],
+    },
+    {
         id: 'amichalked',
         title: 'AmIChalked',
         tagline: 'A community-powered parking app that warns drivers the moment their tires get chalked.',
@@ -52,6 +90,25 @@ const projects = [
             'React Native', 'Expo', 'TypeScript', 'Node.js', 'Express',
             'PostgreSQL', 'PostGIS', 'JWT', 'OpenStreetMap',
         ],
+    },
+    {
+        id: 'library-management',
+        title: 'Library Management System',
+        tagline: 'A console library system in Java 22, built strictly test-first.',
+        description: (
+            <>
+                Supports login, borrowing, returns, and FIFO hold queues, enforcing a
+                three-book limit, 14-day due dates, and hold-availability notices at
+                login. The focus was on the testing process as much as the
+                features.
+            </>
+        ),
+        highlights: [
+            'Practised test-driven development across 75 commits, committing each JUnit 5 test before the code that satisfies it for 26 requirements, with dedicated refactoring commits in between.',
+            'Extended the 52-test JUnit suite with Cucumber BDD feature scenarios and Cypress end-to-end tests against a Node.js web port.',
+            'Injected Scanner and PrintWriter so the console I/O stays testable.',
+        ],
+        tech: ['Java', 'JUnit 5', 'Cucumber', 'Cypress', 'Maven', 'Git'],
     },
     {
         id: 'cnn-mnist',
