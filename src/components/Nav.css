@@ -22,7 +22,6 @@
     color: var(--text-strong);
     font-size: 1.15rem;
     font-weight: 800;
-    font-variation-settings: "CASL" 1;
     text-decoration: none;
     white-space: nowrap;
 }

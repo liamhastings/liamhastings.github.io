@@ -25,7 +25,6 @@
     color: var(--mark-ink);
     font-size: clamp(1.3rem, 3.6vw, 2.4rem);
     font-weight: 800;
-    font-variation-settings: "CASL" 1;
     line-height: 1.2;
     overflow-wrap: anywhere;
     text-decoration-thickness: 3px;

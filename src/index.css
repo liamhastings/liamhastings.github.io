@@ -14,7 +14,7 @@
     --mark-ink: #161d33;
     --focus: #2947a9;
 
-    --font-sans: "Recursive", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    --font-sans: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, "Helvetica Neue", Arial, sans-serif;
 
     --content-width: 1040px;
@@ -54,16 +54,13 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Recursive's CASL axis runs from a plain "linear" cut (0) to a hand-lettered
-   "casual" one (1). Headings use casual; everything else stays linear. */
 h1,
 h2,
 h3 {
     color: var(--text-strong);
-    font-weight: 800;
-    font-variation-settings: "CASL" 1;
+    font-weight: 700;
     line-height: 1.15;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
 }
 
 a {

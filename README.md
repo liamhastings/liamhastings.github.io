@@ -13,8 +13,7 @@ Projects marked `featured: true` in `src/components/Portfolio.js` get a large
 panel with their engineering highlights shown in full. The rest sit in a
 compact row with expandable engineering details.
 
-The typeface is [Recursive](https://www.recursive.design/), loaded from Google
-Fonts in `public/index.html`.
+The typeface is Figtree, loaded from Google Fonts in `public/index.html`.
 
 ## Local development
 
