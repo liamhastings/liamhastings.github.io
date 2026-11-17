@@ -6,8 +6,7 @@ const Hero = () => {
         <section className="hero">
             <div className="hero-text">
                 <h1 className="hero-headline">
-                    Hi, I'm Liam. I build software I actually use, and I can't
-                    leave a bug alone.
+                    Hi, I'm Liam. I like to build software and apps.
                 </h1>
                 <p className="hero-summary">
                     I'm a software engineer in Ottawa with a Computer Science
@@ -20,7 +19,7 @@ const Hero = () => {
 
                 <div className="hero-actions">
                     <a className="button button-primary" href="/resume.pdf" download>
-                        Download résumé
+                        Download resume
                     </a>
                     <a className="button" href="#projects">
                         See projects
