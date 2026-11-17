@@ -1,43 +1,127 @@
-.project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* Featured projects ---------------------------------------------------------- */
+
+.project-featured-list {
+    display: grid;
+    gap: 28px;
 }
 
-.project-card:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-lift);
+.project-featured {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    align-items: start;
+    gap: 44px;
+    padding: 40px;
+    border-radius: var(--radius);
+    background-color: var(--surface);
 }
+
+/* Alternate which side the figure sits on so two panels don't read as a
+   repeated template. */
+.project-featured:nth-child(even) > .figure {
+    order: 2;
+}
+
+.project-featured .project-title {
+    font-size: 1.9rem;
+}
+
+.project-featured .project-tagline {
+    font-size: 1.15rem;
+}
+
+/* Compact projects ----------------------------------------------------------- */
+
+.project-compact-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+    margin-top: 56px;
+}
+
+.project-compact {
+    padding-top: 20px;
+    border-top: 2px solid var(--text-strong);
+}
+
+.project-compact .project-title {
+    font-size: 1.35rem;
+}
+
+.project-compact .project-description {
+    font-size: 0.97rem;
+}
+
+/* Shared project parts ------------------------------------------------------- */
 
 .project-title {
     margin: 0;
-    font-size: 1.15rem;
-    letter-spacing: -0.01em;
 }
 
 .project-tagline {
-    margin: 4px 0 12px;
-    font-size: 0.92rem;
-    color: var(--accent-text);
+    margin: 8px 0 14px;
+    color: var(--text-strong);
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .project-description {
-    margin: 0 0 14px;
-    color: var(--text);
+    margin: 0 0 16px;
 }
 
 .project-highlights {
-    margin: 0 0 16px;
+    margin: 0 0 20px;
     padding-left: 18px;
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .project-highlights li {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .project-highlights li::marker {
     color: var(--accent);
+}
+
+.project-details {
+    margin-top: 16px;
+}
+
+.project-details summary {
+    width: fit-content;
+    color: var(--accent-text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.project-details .project-highlights {
+    margin: 12px 0 0;
+}
+
+@media (max-width: 900px) {
+    .project-featured {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 28px;
+    }
+
+    .project-featured:nth-child(even) > .figure {
+        order: 0;
+    }
+
+    .project-compact-list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 720px) {
+    .project-featured {
+        margin: 0 calc(-1 * var(--gutter) + 8px);
+        padding: 24px 20px;
+    }
+
+    .project-featured .project-title {
+        font-size: 1.6rem;
+    }
 }

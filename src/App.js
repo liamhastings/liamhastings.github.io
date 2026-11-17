@@ -33,9 +33,9 @@ function App() {
             <Nav theme={theme} onToggleTheme={toggleTheme} />
             <main className="content">
                 <Hero />
+                <Portfolio />
                 <About />
                 <Skills />
-                <Portfolio />
                 <Experience />
                 <Education />
                 <Contact />
