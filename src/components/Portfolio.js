@@ -1,12 +1,10 @@
 import React from 'react';
-import { RestockFigure, ChalkAlertFigure } from './ProjectFigures';
 import './Portfolio.css';
 
 const projects = [
     {
         id: 'restock',
         featured: true,
-        Figure: RestockFigure,
         title: 'Restock',
         tagline: 'An offline iOS app whose kitchen inventory fills itself in while you decide what to cook.',
         description: (
@@ -71,7 +69,6 @@ const projects = [
     {
         id: 'amichalked',
         featured: true,
-        Figure: ChalkAlertFigure,
         title: 'AmIChalked',
         tagline: 'A community-powered parking app that warns drivers the moment their tires get chalked.',
         description: (
@@ -132,22 +129,17 @@ const Highlights = ({ highlights }) => (
     </ul>
 );
 
-const FeaturedProject = ({ project }) => {
-    const { Figure } = project;
-
-    return (
-        <article className="project-featured">
-            <Figure />
-            <div className="project-body">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-tagline">{project.tagline}</p>
-                <p className="project-description">{project.description}</p>
-                <Highlights highlights={project.highlights} />
-                <TechList tech={project.tech} />
-            </div>
-        </article>
-    );
-};
+const FeaturedProject = ({ project }) => (
+    <article className="project-featured">
+        <div className="project-summary">
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-tagline">{project.tagline}</p>
+            <p className="project-description">{project.description}</p>
+            <TechList tech={project.tech} />
+        </div>
+        <Highlights highlights={project.highlights} />
+    </article>
+);
 
 const CompactProject = ({ project }) => (
     <article className="project-compact">

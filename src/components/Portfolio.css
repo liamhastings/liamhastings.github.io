@@ -5,20 +5,28 @@
     gap: 28px;
 }
 
+/* Summary on the left, engineering highlights on the right, so a skimmer gets
+   what the project is before how it was built. */
 .project-featured {
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
     align-items: start;
-    gap: 44px;
+    gap: 48px;
     padding: 40px;
     border-radius: var(--radius);
     background-color: var(--surface);
 }
 
-/* Alternate which side the figure sits on so two panels don't read as a
-   repeated template. */
-.project-featured:nth-child(even) > .figure {
-    order: 2;
+.project-featured > .project-highlights {
+    margin: 0.5rem 0 0;
+}
+
+.project-featured > .project-highlights li:last-child {
+    margin-bottom: 0;
+}
+
+.project-featured .project-description {
+    margin-bottom: 20px;
 }
 
 .project-featured .project-title {
@@ -101,12 +109,8 @@
 @media (max-width: 900px) {
     .project-featured {
         grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
+        gap: 24px;
         padding: 28px;
-    }
-
-    .project-featured:nth-child(even) > .figure {
-        order: 0;
     }
 
     .project-compact-list {

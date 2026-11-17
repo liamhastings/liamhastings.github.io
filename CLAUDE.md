@@ -21,7 +21,7 @@ README.md describes the site at a high level — keep it in sync with user-facin
 - **Content is data in components.** Each section keeps its content as a plain array/object at the top of its component file (e.g. `projects` in `Portfolio.js`) and maps over it to render. To add or edit a project, job, skill, etc., edit the data, not the JSX below it.
 - **Theme:** `App.js` owns `theme` state, initialised from `localStorage` (`'theme'`) or `prefers-color-scheme`, and writes it to `data-theme` on `<html>`. Colors are CSS variables keyed off `[data-theme]` — use those variables in new styles rather than hard-coded colors.
 - **Navigation:** `Nav.js` (the sticky top bar) links to sections by element `id`. A new section needs both a component with an `id` and a matching entry in its `NAV` array.
-- **Projects:** entries in `Portfolio.js` with `featured: true` get the large layout and must also set `Figure` to a component from `ProjectFigures.js`; the rest render in the compact row.
+- **Projects:** entries in `Portfolio.js` with `featured: true` get the large panel with highlights shown in full; the rest render in the compact row with highlights behind a toggle.
 - **Font:** Recursive is loaded from Google Fonts in `public/index.html`. Headings use its casual cut via `font-variation-settings: "CASL" 1`.
 - **Static files** in `public/` are referenced by root-relative paths (e.g. `/resume.pdf`). Replacing the CV or photo means replacing the file in `public/` with the same name.
 - `build/` and `node_modules/` are git-ignored; never edit `build/` by hand.
