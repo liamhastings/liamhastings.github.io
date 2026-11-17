@@ -1,14 +1,6 @@
 import React from 'react';
 import './Contact.css';
 
-const EmailIcon = () => (
-    <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="M3 7l9 6 9-6" />
-    </svg>
-);
-
 const LinkedInIcon = () => (
     <svg className="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M4.98 3.5a2.5 2.5 0 11-.02 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21h-4V9z" />
@@ -21,49 +13,45 @@ const GitHubIcon = () => (
     </svg>
 );
 
+const links = [
+    {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/liam-hastings-30b389270/',
+        Icon: LinkedInIcon,
+    },
+    {
+        label: 'GitHub',
+        href: 'https://github.com/liamhastings',
+        Icon: GitHubIcon,
+    },
+];
+
 const Contact = () => {
     const email = 'liamhastings04@gmail.com';
     const mailto = `mailto:${email}?subject=Hello%20from%20your%20site`;
 
     return (
         <section className="section" id="contact">
-            <h2 className="section-title">
-                <span className="section-index">06.</span> Contact
-            </h2>
-            <p className="section-intro">
-                I'm open to chatting about new grad software engineering roles, or anything
-                that sounds interesting. Email is fastest, but use whichever works
-                for you.
-            </p>
+            <div className="contact-panel">
+                <h2 className="section-title">Contact</h2>
+                <p className="contact-intro">
+                    I'm open to chatting about new grad software engineering
+                    roles, or anything that sounds interesting. Email is
+                    fastest, but use whichever works for you.
+                </p>
 
-            <div className="contact-grid">
-                <a className="contact-card card" href={mailto}>
-                    <EmailIcon />
-                    <div className="text">
-                        <span className="label">Email</span>
-                        <span className="handle">{email}</span>
-                    </div>
-                </a>
+                <a className="contact-email" href={mailto}>{email}</a>
 
-                <a className="contact-card card"
-                    href="https://www.linkedin.com/in/liam-hastings-30b389270/"
-                    target="_blank" rel="noopener noreferrer">
-                    <LinkedInIcon />
-                    <div className="text">
-                        <span className="label">LinkedIn</span>
-                        <span className="handle">in/liam-hastings</span>
-                    </div>
-                </a>
-
-                <a className="contact-card card"
-                    href="https://github.com/liamhastings"
-                    target="_blank" rel="noopener noreferrer">
-                    <GitHubIcon />
-                    <div className="text">
-                        <span className="label">GitHub</span>
-                        <span className="handle">@liamhastings</span>
-                    </div>
-                </a>
+                <ul className="contact-links">
+                    {links.map(({ label, href, Icon }) => (
+                        <li key={label}>
+                            <a href={href} target="_blank" rel="noopener noreferrer">
+                                <Icon />
+                                {label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </section>
     );

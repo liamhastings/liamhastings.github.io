@@ -30,25 +30,23 @@ const groups = [
 
 const Skills = () => {
     return (
-        <section className="section" id="skills">
-            <h2 className="section-title">
-                <span className="section-index">02.</span> Skills
-            </h2>
-            <p className="section-intro">
-                Technologies I've used to ship something real, not just read about.
-            </p>
+        <section className="section section-split" id="skills">
+            <h2 className="section-title">Skills</h2>
 
-            <div className="skill-groups">
-                {groups.map(group => (
-                    <div key={group.name} className="skill-group">
-                        <h3 className="skill-group-name">{group.name}</h3>
-                        <ul className="tag-list">
-                            {group.items.map(item => (
-                                <li key={item} className="tag">{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+            <div className="section-body">
+                <p className="section-intro">
+                    Technologies I've used to ship something real, not just read
+                    about.
+                </p>
+
+                <dl className="skill-groups">
+                    {groups.map(group => (
+                        <div key={group.name} className="skill-group">
+                            <dt>{group.name}</dt>
+                            <dd>{group.items.join(', ')}</dd>
+                        </div>
+                    ))}
+                </dl>
             </div>
         </section>
     );
