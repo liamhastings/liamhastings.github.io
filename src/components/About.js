@@ -20,16 +20,17 @@ const About = () => {
             </p>
             <p>
                 Most of my strongest work has come from taking a course project
-                past the point where it was graded. A relational database
-                assignment became a full Flask app backed by live catalogue APIs.
-                A native iOS side project got rebuilt from scratch as a
+                past the point where it was graded, or from building tools I
+                actually use every day. A native iOS side project got rebuilt from
+                scratch as a
                 cross-platform React Native client with a Node/Express and
                 PostGIS backend, because the original had a GPS-drift bug I
                 couldn't leave alone.
             </p>
             <p>
-                I'm currently looking for new grad software engineering and
-                ML/AI roles. This site is React, built and deployed by me.
+                I'm currently looking for new grad software developer and
+                software engineering roles. This site is React, built and
+                deployed by me.
             </p>
         </section>
     );

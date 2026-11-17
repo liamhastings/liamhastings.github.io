@@ -4,27 +4,27 @@ import './Skills.css';
 const groups = [
     {
         name: 'Languages',
-        items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C', 'C++', 'SQL', 'HTML/CSS'],
+        items: ['Java', 'TypeScript', 'JavaScript', 'Python', 'C', 'C++', 'SQL', 'HTML/CSS'],
     },
     {
         name: 'Frameworks & Libraries',
-        items: ['React', 'React Native', 'Expo', 'Node.js', 'Express', 'Flask', 'Handlebars'],
-    },
-    {
-        name: 'Machine Learning & Data',
-        items: ['PyTorch', 'NumPy', 'Pandas', 'Matplotlib', 'CNNs', 'Google Colab'],
+        items: ['React', 'Next.js', 'React Native', 'Expo', 'Node.js', 'Express', 'Tailwind CSS', 'Vite'],
     },
     {
         name: 'Databases',
-        items: ['PostgreSQL', 'PostGIS', 'SQLite', 'Schema Design', 'Normalization'],
+        items: ['PostgreSQL', 'PostGIS', 'SQLite', 'Supabase', 'Schema Design'],
     },
     {
         name: 'Testing & QA',
-        items: ['Cypress', 'Cucumber', 'Software Quality Assurance'],
+        items: ['JUnit 5', 'Cucumber', 'Cypress', 'Test-Driven Development'],
+    },
+    {
+        name: 'AI Tools',
+        items: ['Claude Code', 'Claude API', 'Multi-Agent Workflows'],
     },
     {
         name: 'Tools & Concepts',
-        items: ['Git', 'Linux', 'REST APIs', 'JWT Auth', 'Role-Based Access Control', 'VS Code', 'IntelliJ'],
+        items: ['Git', 'Maven', 'Linux', 'REST APIs', 'JWT Auth', 'VS Code', 'IntelliJ IDEA'],
     },
 ];
 

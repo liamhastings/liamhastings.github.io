@@ -70,7 +70,7 @@ const Sidebar = ({ theme, onToggleTheme }) => {
                 <img src="/profilepic.jpeg" alt="Liam Hastings" className="profile-picture" />
                 <div className="identity">
                     <div className="name">Liam Hastings</div>
-                    <div className="role">Computer Science, ML &amp; AI</div>
+                    <div className="role">Software Engineer</div>
                 </div>
 
                 <nav className="sidebar-nav" aria-label="Sections">

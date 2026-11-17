@@ -31,7 +31,7 @@ const Contact = () => {
                 <span className="section-index">06.</span> Contact
             </h2>
             <p className="section-intro">
-                I'm open to chatting about new grad roles, ML/AI work, or anything
+                I'm open to chatting about new grad software engineering roles, or anything
                 that sounds interesting. Email is fastest, but use whichever works
                 for you.
             </p>
