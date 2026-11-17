@@ -109,61 +109,6 @@ const projects = [
         ],
         tech: ['Java', 'JUnit 5', 'Cucumber', 'Cypress', 'Maven', 'Git'],
     },
-    {
-        id: 'cnn-mnist',
-        title: 'MNIST Image Classifier (CNN)',
-        tagline: 'Convolutional Neural Network for handwritten digit recognition.',
-        description: (
-            <>
-                Built a CNN from scratch for image classification on the MNIST
-                database, trained on a T4 GPU via Google Colab. A class project that
-                turned into a deeper dive into model architecture, regularization,
-                and training dynamics.
-            </>
-        ),
-        tech: ['Python', 'PyTorch', 'Google Colab', 'NumPy'],
-    },
-    {
-        id: 'watchlist-db',
-        title: 'Watchlist Database',
-        tagline: 'Full-stack web app for tracking movies, books, and your reading/watching lists.',
-        description: (
-            <>
-                Started as a COMP3005 relational-database project and grew into a full
-                Flask web app with a clean custom interface. Users create accounts
-                (passwords hashed), then search real titles from the Open Library and
-                TMDB APIs and add them with cover art, posters, authors, and
-                directors to personal book and video lists. The catalog isn't
-                hardcoded: it grows from whatever users discover, all backed by a
-                normalized SQLite schema with users, lists, and many-to-many links.
-            </>
-        ),
-        tech: ['Python', 'Flask', 'SQLite', 'SQL', 'HTML/CSS', 'REST APIs'],
-    },
-    {
-        id: 'weather-app',
-        title: 'Weather App',
-        tagline: 'A full-stack weather lookup app with user accounts and admin controls.',
-        description: (
-            <>
-                A server-rendered weather app: users sign up, log in, and search any
-                city to get live conditions, temperature, "feels like", humidity, and
-                wind, pulled from the OpenWeatherMap API. Admins get a separate,
-                role-gated dashboard to view and manage registered users. Built on
-                Node/Express with Handlebars templating and a SQLite database, then
-                redesigned with a modern glassmorphic UI.
-            </>
-        ),
-        highlights: [
-            'Built HTTP Basic Auth middleware with role-based access control, gating the admin user-management dashboard behind an "admin" role.',
-            'Integrated the OpenWeatherMap API with a resilient request pipeline, URL-encoded queries plus network- and parse-error handling so a failed lookup degrades gracefully instead of crashing the server.',
-            'Hardened the data layer by migrating to better-sqlite3 with parameterized queries, and gave the whole app a responsive glassmorphic redesign.',
-        ],
-        tech: [
-            'Node.js', 'Express', 'Handlebars', 'SQLite', 'better-sqlite3',
-            'REST APIs', 'HTML/CSS',
-        ],
-    },
 ];
 
 const Portfolio = () => {
