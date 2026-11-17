@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Nav.css';
 
 const NAV = [
@@ -30,6 +30,7 @@ const ACTIVE_BAND_BOTTOM = 0.3;
 
 const Nav = ({ theme, onToggleTheme }) => {
     const [activeId, setActiveId] = useState(null);
+    const linksRef = useRef(null);
 
     useEffect(() => {
         const sections = NAV
@@ -75,12 +76,26 @@ const Nav = ({ theme, onToggleTheme }) => {
         };
     }, []);
 
+    // On narrow screens the links scroll sideways, so the current one can be
+    // off-screen. Only the link row is scrolled; scrollIntoView could also
+    // move the page and interrupt the reader's own scrolling.
+    useEffect(() => {
+        const row = linksRef.current;
+        const link = row && row.querySelector('a.active');
+        if (!link) return;
+        const rowBox = row.getBoundingClientRect();
+        const linkBox = link.getBoundingClientRect();
+        if (linkBox.left < rowBox.left || linkBox.right > rowBox.right) {
+            row.scrollLeft += linkBox.left - rowBox.left - 16;
+        }
+    }, [activeId]);
+
     return (
         <header className="site-nav">
             <div className="site-nav-inner">
                 <a className="site-nav-name" href="#top">Liam Hastings</a>
 
-                <nav className="site-nav-links" aria-label="Sections">
+                <nav className="site-nav-links" aria-label="Sections" ref={linksRef}>
                     {NAV.map(item => (
                         <a
                             key={item.id}
