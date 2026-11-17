@@ -29,6 +29,43 @@ const projects = [
         ],
     },
     {
+        id: 'stupideas',
+        title: 'Stupideas Hackathon Project',
+        tagline: 'A parody swipe-to-match web app for finding hackathon teammates, built by a team of three in one day.',
+        description: (
+            <>
+                Built for the Stupideas hackathon: a parody of dating apps where you swipe through potential hackathon teammates instead.
+                I owned the Next.js scaffold, the shared type contract, the profile
+                API routes, and a seven-step onboarding wizard.
+            </>
+        ),
+        highlights: [
+            'Wrote the shared CLAUDE.md that coordinated three parallel Claude Code agents on separate branches, using per-person file ownership and a typed API contract so the agents never stepped on each other.',
+            'Shipped 15 pull requests across the team in a single day.',
+        ],
+        tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Claude Code'],
+    },
+    {
+        id: 'savely',
+        title: 'Savely',
+        tagline: 'A multi-user personal finance web app built on Plaid-linked bank accounts.',
+        description: (
+            <>
+                A React, Vite, and Tailwind front end on an Express/TypeScript API
+                and PostgreSQL, showing budgets, net worth, and transactions pulled
+                from bank accounts linked through Plaid.
+            </>
+        ),
+        highlights: [
+            'Secured the API with Supabase Auth JWTs verified against the project\'s JWKS, and scoped every query to the signed-in user.',
+            'Encrypted Plaid access tokens with AES-256-GCM inside a cursor-based transaction sync engine.',
+        ],
+        tech: [
+            'TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express',
+            'PostgreSQL', 'Supabase', 'Plaid API',
+        ],
+    },
+    {
         id: 'amichalked',
         title: 'AmIChalked',
         tagline: 'A community-powered parking app that warns drivers the moment their tires get chalked.',
@@ -54,59 +91,23 @@ const projects = [
         ],
     },
     {
-        id: 'cnn-mnist',
-        title: 'MNIST Image Classifier (CNN)',
-        tagline: 'Convolutional Neural Network for handwritten digit recognition.',
+        id: 'library-management',
+        title: 'Library Management System',
+        tagline: 'A console library system in Java 22, built strictly test-first.',
         description: (
             <>
-                Built a CNN from scratch for image classification on the MNIST
-                database, trained on a T4 GPU via Google Colab. A class project that
-                turned into a deeper dive into model architecture, regularization,
-                and training dynamics.
-            </>
-        ),
-        tech: ['Python', 'PyTorch', 'Google Colab', 'NumPy'],
-    },
-    {
-        id: 'watchlist-db',
-        title: 'Watchlist Database',
-        tagline: 'Full-stack web app for tracking movies, books, and your reading/watching lists.',
-        description: (
-            <>
-                Started as a COMP3005 relational-database project and grew into a full
-                Flask web app with a clean custom interface. Users create accounts
-                (passwords hashed), then search real titles from the Open Library and
-                TMDB APIs and add them with cover art, posters, authors, and
-                directors to personal book and video lists. The catalog isn't
-                hardcoded: it grows from whatever users discover, all backed by a
-                normalized SQLite schema with users, lists, and many-to-many links.
-            </>
-        ),
-        tech: ['Python', 'Flask', 'SQLite', 'SQL', 'HTML/CSS', 'REST APIs'],
-    },
-    {
-        id: 'weather-app',
-        title: 'Weather App',
-        tagline: 'A full-stack weather lookup app with user accounts and admin controls.',
-        description: (
-            <>
-                A server-rendered weather app: users sign up, log in, and search any
-                city to get live conditions, temperature, "feels like", humidity, and
-                wind, pulled from the OpenWeatherMap API. Admins get a separate,
-                role-gated dashboard to view and manage registered users. Built on
-                Node/Express with Handlebars templating and a SQLite database, then
-                redesigned with a modern glassmorphic UI.
+                Supports login, borrowing, returns, and FIFO hold queues, enforcing a
+                three-book limit, 14-day due dates, and hold-availability notices at
+                login. The focus was on the testing process as much as the
+                features.
             </>
         ),
         highlights: [
-            'Built HTTP Basic Auth middleware with role-based access control, gating the admin user-management dashboard behind an "admin" role.',
-            'Integrated the OpenWeatherMap API with a resilient request pipeline, URL-encoded queries plus network- and parse-error handling so a failed lookup degrades gracefully instead of crashing the server.',
-            'Hardened the data layer by migrating to better-sqlite3 with parameterized queries, and gave the whole app a responsive glassmorphic redesign.',
+            'Practised test-driven development across 75 commits, committing each JUnit 5 test before the code that satisfies it for 26 requirements, with dedicated refactoring commits in between.',
+            'Extended the 52-test JUnit suite with Cucumber BDD feature scenarios and Cypress end-to-end tests against a Node.js web port.',
+            'Injected Scanner and PrintWriter so the console I/O stays testable.',
         ],
-        tech: [
-            'Node.js', 'Express', 'Handlebars', 'SQLite', 'better-sqlite3',
-            'REST APIs', 'HTML/CSS',
-        ],
+        tech: ['Java', 'JUnit 5', 'Cucumber', 'Cypress', 'Maven', 'Git'],
     },
 ];
 

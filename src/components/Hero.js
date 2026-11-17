@@ -7,14 +7,14 @@ const Hero = () => {
             <p className="hero-eyebrow">Ottawa, Canada</p>
             <h1 className="hero-name">Liam Hastings</h1>
             <p className="hero-headline">
-                Software engineer with a Computer Science degree in the AI and
-                Machine Learning stream.
+                Software engineer with a Computer Science degree from Carleton
+                University.
             </p>
             <p className="hero-summary">
-                I build full-stack applications end to end, from PostGIS
-                geospatial queries and Node APIs to React Native clients and CNNs
-                trained on GPU. Actively seeking full-time software engineering
-                and ML opportunities.
+                I build full-stack web and mobile applications end to end, from
+                PostgreSQL and PostGIS queries and Node APIs to React and React
+                Native clients. Actively seeking full-time software developer and
+                software engineering roles.
             </p>
 
             <div className="hero-actions">
@@ -36,11 +36,11 @@ const Hero = () => {
                 </div>
                 <div>
                     <dt>Focus</dt>
-                    <dd>AI / ML &middot; Full-Stack</dd>
+                    <dd>Full-Stack &middot; Mobile</dd>
                 </div>
                 <div>
                     <dt>Core Stack</dt>
-                    <dd>Java &middot; Python &middot; React &middot; Node</dd>
+                    <dd>TypeScript &middot; Java &middot; React &middot; Node</dd>
                 </div>
             </dl>
         </section>
