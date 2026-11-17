@@ -4,6 +4,7 @@ import './Portfolio.css';
 const projects = [
     {
         id: 'restock',
+        featured: true,
         title: 'Restock',
         tagline: 'An offline iOS app whose kitchen inventory fills itself in while you decide what to cook.',
         description: (
@@ -67,6 +68,7 @@ const projects = [
     },
     {
         id: 'amichalked',
+        featured: true,
         title: 'AmIChalked',
         tagline: 'A community-powered parking app that warns drivers the moment their tires get chalked.',
         description: (
@@ -111,38 +113,68 @@ const projects = [
     },
 ];
 
+const TechList = ({ tech }) => (
+    <ul className="tag-list">
+        {tech.map(t => (
+            <li key={t} className="tag">{t}</li>
+        ))}
+    </ul>
+);
+
+const Highlights = ({ highlights }) => (
+    <ul className="project-highlights">
+        {highlights.map((highlight, i) => (
+            <li key={i}>{highlight}</li>
+        ))}
+    </ul>
+);
+
+const FeaturedProject = ({ project }) => (
+    <article className="project-featured">
+        <div className="project-summary">
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-tagline">{project.tagline}</p>
+            <p className="project-description">{project.description}</p>
+            <TechList tech={project.tech} />
+        </div>
+        <Highlights highlights={project.highlights} />
+    </article>
+);
+
+const CompactProject = ({ project }) => (
+    <article className="project-compact">
+        <h3 className="project-title">{project.title}</h3>
+        <p className="project-tagline">{project.tagline}</p>
+        <p className="project-description">{project.description}</p>
+        <TechList tech={project.tech} />
+        <details className="project-details">
+            <summary>Engineering details</summary>
+            <Highlights highlights={project.highlights} />
+        </details>
+    </article>
+);
+
 const Portfolio = () => {
+    const featured = projects.filter(project => project.featured);
+    const others = projects.filter(project => !project.featured);
+
     return (
         <section className="section" id="projects">
-            <h2 className="section-title">
-                <span className="section-index">03.</span> Projects
-            </h2>
+            <h2 className="section-title">Projects</h2>
             <p className="section-intro">
                 A few things I've built, from coursework to side projects I keep
                 coming back to.
             </p>
 
-            <div className="project-list">
-                {projects.map(project => (
-                    <article key={project.id} className="project-card card">
-                        <h3 className="project-title">{project.title}</h3>
-                        <p className="project-tagline">{project.tagline}</p>
-                        <p className="project-description">{project.description}</p>
+            <div className="project-featured-list">
+                {featured.map(project => (
+                    <FeaturedProject key={project.id} project={project} />
+                ))}
+            </div>
 
-                        {project.highlights && (
-                            <ul className="project-highlights">
-                                {project.highlights.map((highlight, i) => (
-                                    <li key={i}>{highlight}</li>
-                                ))}
-                            </ul>
-                        )}
-
-                        <ul className="tag-list">
-                            {project.tech.map(t => (
-                                <li key={t} className="tag">{t}</li>
-                            ))}
-                        </ul>
-                    </article>
+            <div className="project-compact-list">
+                {others.map(project => (
+                    <CompactProject key={project.id} project={project} />
                 ))}
             </div>
         </section>

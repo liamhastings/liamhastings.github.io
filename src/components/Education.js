@@ -20,13 +20,11 @@ const awards = [
 
 const Education = () => {
     return (
-        <section className="section" id="education">
-            <h2 className="section-title">
-                <span className="section-index">05.</span> Education
-            </h2>
+        <section className="section section-split" id="education">
+            <h2 className="section-title">Education</h2>
 
-            <div className="timeline">
-                <article className="timeline-entry card">
+            <div className="section-body timeline">
+                <article className="timeline-entry">
                     <div className="timeline-head">
                         <div>
                             <h3 className="timeline-title">
@@ -34,27 +32,19 @@ const Education = () => {
                                 Intelligence and Machine Learning
                             </h3>
                             <div className="timeline-org">
-                                Carleton University &middot; Ottawa, ON
+                                Carleton University, Ottawa, ON
                             </div>
                         </div>
                         <span className="timeline-period">
-                            September 2022 — May 2026
+                            September 2022 – May 2026
                         </span>
                     </div>
 
                     <h4 className="timeline-subhead">Awards</h4>
-                    <ul className="tag-list">
-                        {awards.map(award => (
-                            <li key={award} className="tag">{award}</li>
-                        ))}
-                    </ul>
+                    <p className="timeline-list">{awards.join(', ')}</p>
 
-                    <h4 className="timeline-subhead">Relevant Coursework</h4>
-                    <ul className="tag-list">
-                        {coursework.map(course => (
-                            <li key={course} className="tag">{course}</li>
-                        ))}
-                    </ul>
+                    <h4 className="timeline-subhead">Relevant coursework</h4>
+                    <p className="timeline-list">{coursework.join(', ')}</p>
                 </article>
             </div>
         </section>

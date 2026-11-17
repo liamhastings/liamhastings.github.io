@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import './Sidebar.css';
+import React, { useEffect, useRef, useState } from 'react';
+import './Nav.css';
 
 const NAV = [
+    { id: 'projects', label: 'Projects' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' },
@@ -25,8 +25,12 @@ const MoonIcon = () => (
     </svg>
 );
 
-const Sidebar = ({ theme, onToggleTheme }) => {
-    const [activeId, setActiveId] = useState(NAV[0].id);
+// Must match the bottom edge of the observer band below (100% - 70%).
+const ACTIVE_BAND_BOTTOM = 0.3;
+
+const Nav = ({ theme, onToggleTheme }) => {
+    const [activeId, setActiveId] = useState(null);
+    const linksRef = useRef(null);
 
     useEffect(() => {
         const sections = NAV
@@ -38,6 +42,13 @@ const Sidebar = ({ theme, onToggleTheme }) => {
         const atBottom = () =>
             window.innerHeight + window.scrollY >=
             document.documentElement.scrollHeight - 2;
+
+        // While the hero is still on screen no section is current. The observer
+        // only reports sections entering the band, so it can't tell us this.
+        const aboveFirstSection = () =>
+            sections.length > 0 &&
+            sections[0].getBoundingClientRect().top >
+                window.innerHeight * ACTIVE_BAND_BOTTOM;
 
         const observer = new IntersectionObserver(
             entries => {
@@ -54,6 +65,7 @@ const Sidebar = ({ theme, onToggleTheme }) => {
 
         const onScroll = () => {
             if (atBottom()) setActiveId(NAV[NAV.length - 1].id);
+            else if (aboveFirstSection()) setActiveId(null);
         };
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
@@ -64,16 +76,26 @@ const Sidebar = ({ theme, onToggleTheme }) => {
         };
     }, []);
 
-    return (
-        <header className="sidebar">
-            <div className="sidebar-inner">
-                <img src="/profilepic.jpeg" alt="Liam Hastings" className="profile-picture" />
-                <div className="identity">
-                    <div className="name">Liam Hastings</div>
-                    <div className="role">Software Engineer</div>
-                </div>
+    // On narrow screens the links scroll sideways, so the current one can be
+    // off-screen. Only the link row is scrolled; scrollIntoView could also
+    // move the page and interrupt the reader's own scrolling.
+    useEffect(() => {
+        const row = linksRef.current;
+        const link = row && row.querySelector('a.active');
+        if (!link) return;
+        const rowBox = row.getBoundingClientRect();
+        const linkBox = link.getBoundingClientRect();
+        if (linkBox.left < rowBox.left || linkBox.right > rowBox.right) {
+            row.scrollLeft += linkBox.left - rowBox.left - 16;
+        }
+    }, [activeId]);
 
-                <nav className="sidebar-nav" aria-label="Sections">
+    return (
+        <header className="site-nav">
+            <div className="site-nav-inner">
+                <a className="site-nav-name" href="#top">Liam Hastings</a>
+
+                <nav className="site-nav-links" aria-label="Sections" ref={linksRef}>
                     {NAV.map(item => (
                         <a
                             key={item.id}
@@ -93,11 +115,10 @@ const Sidebar = ({ theme, onToggleTheme }) => {
                     aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                 >
                     {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-                    <span>{theme === 'dark' ? 'Light' : 'Dark'} mode</span>
                 </button>
             </div>
         </header>
     );
 };
 
-export default Sidebar;
+export default Nav;

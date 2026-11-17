@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project overview
-- **What:** My personal site and CV — a single-page portfolio with a sticky section nav, light/dark theme, and sections for about, skills, projects, experience, education, and contact. Live at https://liamhastings.github.io/.
+- **What:** My personal site and CV — a single-page portfolio with a sticky top nav, light/dark theme, a first-person hero, and sections for projects, about, skills, experience, education, and contact. Live at https://liamhastings.github.io/.
 - **Stack:** JavaScript, React 19, Create React App (`react-scripts` 5), plain CSS (one stylesheet per component). Deployed to GitHub Pages via `gh-pages`. No backend, no router, no state library.
 - **Structure:** `src/App.js` (layout root + theme state), `src/components/` (one component per section, each with an optional matching `.css`), `src/index.css` / `src/App.css` (global styles and theme variables), `public/` (static assets copied as-is: `index.html`, `profilepic.jpeg`, `resume.pdf`).
 
@@ -20,7 +20,9 @@ README.md describes the site at a high level — keep it in sync with user-facin
 ## Architecture
 - **Content is data in components.** Each section keeps its content as a plain array/object at the top of its component file (e.g. `projects` in `Portfolio.js`) and maps over it to render. To add or edit a project, job, skill, etc., edit the data, not the JSX below it.
 - **Theme:** `App.js` owns `theme` state, initialised from `localStorage` (`'theme'`) or `prefers-color-scheme`, and writes it to `data-theme` on `<html>`. Colors are CSS variables keyed off `[data-theme]` — use those variables in new styles rather than hard-coded colors.
-- **Navigation:** `Sidebar.js` links to sections by element `id`. A new section needs both a component with an `id` and a matching entry in the sidebar.
+- **Navigation:** `Nav.js` (the sticky top bar) links to sections by element `id`. A new section needs both a component with an `id` and a matching entry in its `NAV` array.
+- **Projects:** entries in `Portfolio.js` with `featured: true` get the large panel with highlights shown in full; the rest render in the compact row with highlights behind a toggle.
+- **Font:** Figtree is loaded from Google Fonts in `public/index.html` and set through `--font-sans`.
 - **Static files** in `public/` are referenced by root-relative paths (e.g. `/resume.pdf`). Replacing the CV or photo means replacing the file in `public/` with the same name.
 - `build/` and `node_modules/` are git-ignored; never edit `build/` by hand.
 
