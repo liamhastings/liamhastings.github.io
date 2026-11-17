@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Sidebar from './components/Sidebar';
+import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -29,8 +29,8 @@ function App() {
         setTheme(current => (current === 'dark' ? 'light' : 'dark'));
 
     return (
-        <div className="app">
-            <Sidebar theme={theme} onToggleTheme={toggleTheme} />
+        <div className="app" id="top">
+            <Nav theme={theme} onToggleTheme={toggleTheme} />
             <main className="content">
                 <Hero />
                 <About />

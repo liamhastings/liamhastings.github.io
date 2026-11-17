@@ -1,39 +1,38 @@
+/* Palette: "sweater blue" is sampled from the profile photo and "chalk yellow"
+   nods to AmIChalked. Yellow is only ever a fill behind dark ink, never a text
+   colour, because it has no contrast against the light background. */
 :root {
-    --bg: #ffffff;
-    --surface: #f7f8fa;
-    --surface-hover: #eef1f6;
-    --text: #14181f;
-    --text-strong: #000000;
-    --muted: #5b6472;
-    --border: #e3e7ee;
-    --accent: #2563eb;
-    --accent-soft: #e7f0ff;
-    --accent-text: #1d4ed8;
-    --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 12px rgba(16, 24, 40, 0.06);
-    --shadow-lift: 0 4px 8px rgba(16, 24, 40, 0.06), 0 12px 28px rgba(16, 24, 40, 0.1);
+    --bg: #e3e9f4;
+    --surface: #f8fafd;
+    --text: #232b45;
+    --text-strong: #161d33;
+    --muted: #4a5574;
+    --border: #c3cde1;
+    --accent: #6f8bc0;
+    --accent-text: #2947a9;
+    --mark: #f5d547;
+    --mark-ink: #161d33;
+    --focus: #2947a9;
 
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "SF Mono", "JetBrains Mono", Menlo, Consolas,
-        "Liberation Mono", monospace;
+    --font-sans: "Recursive", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
 
-    --sidebar-width: 280px;
-    --radius: 10px;
+    --content-width: 1040px;
+    --gutter: 32px;
+    --nav-height: 60px;
+    --radius: 20px;
 }
 
 [data-theme="dark"] {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface-hover: #1c232d;
-    --text: #d5dde6;
-    --text-strong: #f0f6fc;
-    --muted: #8b949e;
-    --border: #262d38;
-    --accent: #58a6ff;
-    --accent-soft: #132540;
-    --accent-text: #79c0ff;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
-    --shadow-lift: 0 4px 8px rgba(0, 0, 0, 0.35), 0 12px 28px rgba(0, 0, 0, 0.4);
+    --bg: #161d33;
+    --surface: #1f2845;
+    --text: #d9e0f0;
+    --text-strong: #f8fafd;
+    --muted: #9aa6c4;
+    --border: #323d61;
+    --accent: #6f8bc0;
+    --accent-text: #b4c6f0;
+    --focus: #f5d547;
 }
 
 * {
@@ -49,21 +48,40 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-sans);
-    font-size: 16px;
+    font-size: 1.0625rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Recursive's CASL axis runs from a plain "linear" cut (0) to a hand-lettered
+   "casual" one (1). Headings use casual; everything else stays linear. */
 h1,
 h2,
 h3 {
     color: var(--text-strong);
-    line-height: 1.25;
+    font-weight: 800;
+    font-variation-settings: "CASL" 1;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
 }
 
 a {
     color: var(--accent-text);
+    text-underline-offset: 0.18em;
+}
+
+:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+    :root {
+        --gutter: 20px;
+        --nav-height: 92px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

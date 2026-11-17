@@ -1,72 +1,58 @@
-.app {
-    display: flex;
-    align-items: flex-start;
-    min-height: 100vh;
-}
-
 .content {
-    flex: 1;
-    min-width: 0;
-    max-width: 900px;
-    padding: 0 40px 80px;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter) 72px;
 }
 
 /* Shared section chrome ---------------------------------------------------- */
 
 .section {
-    padding-top: 56px;
-    scroll-margin-top: 24px;
+    padding-top: 104px;
+    /* Anchor jumps should land below the sticky nav, not underneath it. */
+    scroll-margin-top: calc(var(--nav-height) - 40px);
 }
 
 .section-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 6px;
-    font-size: 1.4rem;
-    letter-spacing: -0.01em;
-}
-
-.section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: var(--border);
-}
-
-.section-title .section-index {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--accent-text);
+    margin: 0 0 12px;
+    font-size: 2.25rem;
 }
 
 .section-intro {
-    max-width: 62ch;
-    margin: 0 0 24px;
+    max-width: 58ch;
+    margin: 0 0 36px;
     color: var(--muted);
+    font-size: 1.125rem;
 }
 
-/* Shared card + tag primitives --------------------------------------------- */
-
-.card {
-    padding: 20px 22px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background-color: var(--surface);
-    box-shadow: var(--shadow);
-    transition: border-color 0.15s ease, box-shadow 0.15s ease,
-        transform 0.15s ease;
+.section p {
+    max-width: 62ch;
 }
+
+/* Credential sections (about, skills, experience, education) put the heading
+   in a narrow left column so they read as a quieter CV block under the
+   full-width projects. */
+.section-split {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    column-gap: 48px;
+}
+
+.section-split > .section-title {
+    font-size: 1.75rem;
+}
+
+.section-split > .section-body > :first-child {
+    margin-top: 0.35rem;
+}
+
+/* Shared tag primitive ----------------------------------------------------- */
 
 .tag {
-    padding: 3px 9px;
+    padding: 2px 9px;
     border: 1px solid var(--border);
-    border-radius: 999px;
-    background-color: var(--accent-soft);
-    color: var(--accent-text);
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 0.8rem;
     white-space: nowrap;
 }
 
@@ -84,22 +70,27 @@
     padding-top: 24px;
     border-top: 1px solid var(--border);
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
-@media (max-width: 900px) {
-    .app {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
+@media (max-width: 720px) {
     .content {
-        max-width: none;
-        padding: 0 20px 60px;
+        padding-bottom: 56px;
     }
 
     .section {
-        padding-top: 44px;
-        scroll-margin-top: 80px;
+        padding-top: 72px;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .section-split {
+        display: block;
+    }
+
+    .section-split > .section-title {
+        margin-bottom: 16px;
     }
 }
